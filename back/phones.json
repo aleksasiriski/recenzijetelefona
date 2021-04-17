@@ -1,0 +1,128 @@
+[
+	{
+	  "model": "One Plus 7",
+	  "manufacturer": "One Plus",
+	  "price": "500",
+	  "image": "images/op7.jpg",
+	  "dimensions": {
+	    "length": "157.7",
+	    "width": "74.8",
+	    "height": "8.2"
+	  },
+	  "display": "6.41 inches, 1080 x 2340 pixels",
+	  "os": "Android 9.0 (Pie), upgradable to Android 10",
+	  "memory": "128GB/6GB, 256GB/8GB, 256GB/12GB",
+	  "camera": "48 MP, f/1.7, (wide), 5 MP, f/2.4, (depth)",
+	  "battery": "3700",
+	  "ratings": "50",
+	  "nratings": "10",
+	  "youtube": "https://www.youtube.com/embed/MOJ1_FtDGNs",
+	  "review": "The OnePlus 7 sits in the shadows. Not because it's a bad phone, but because it was outshone by its headline-grabbing sibling, the OnePlus 7 Pro, as well as the OnePlus 7T and 7T Pro which came out a few months afterwards. The OnePlus 8 line, released a year afterwards, likewise stole some of the spotlight, but the OnePlus 7 was arguably the company's last handset that still sat in that 'affordable' bracket, before the subsequent phones reached high prices. There's not much difference between it and the OnePlus 6T which it replaces, but that's sort of the point. It offers a more affordable option to those who can't stretch to the pricier Pro, but still want the latest power under the hood. The OnePlus 7 packs in the top-end Snapdragon 855 chipset along with a choice of either 6GB or 8GB of RAM. Your RAM choice is tied to the amount of storage you'll get inside (128GB or 256GB), but even the entry-level model provides plenty. It fits the 'affordable flagship' bill nicely, giving you enough power to run pretty much any app or game, and there's plenty of storage for your downloads, photos and music. The camera is good, not great, the screen is bright and colorful, but doesn't match the HDR-enable QHD screens of the more expensive and it misses out on a certified waterproof rating and wireless charging. However, if you've got a set budget you simply can't exceed, and the OnePlus 7 sits at the top of it, you're unlikely to find a better phone for the money.",
+	  "experiences": [
+	    {
+	      "name": "Djuro Djuric",
+	      "content": "Superiska telefon, sve preporuke!",
+	      "likes": "5",
+	      "dislikes": "3"
+	    },
+	    {
+	      "name": "Djuro Tmuric",
+	      "content": "Superiska mobitel, sve preporuke!",
+	      "likes": "8",
+	      "dislikes": "1"
+	    },
+	    {
+	      "name": "Djuro Curic",
+	      "content": "Superiska sprava za pricanje, sve preporuke!",
+	      "likes": "1",
+	      "dislikes": "100"
+	    }
+	  ],
+	  "createdAt": "2021-04-17T08:54:53.501+00:00",
+	  "updatedAt": "2021-04-17T08:54:53.501+00:00"
+	},
+	{
+	  "model": "Pixel 4",
+	  "manufacturer": "Google",
+	  "price": "400",
+	  "image": "images/pixel4.jpg",
+	  "dimensions": {
+	    "length": "147.1",
+	    "width": "68.8",
+	    "height": "8.2"
+	  },
+	  "display": "5.7 inches, 1080 x 2280 pixels",
+	  "os": "Android 10, upgradable to Android 11",
+	  "memory": "64GB/6GB, 128GB/6GB",
+	  "camera": "12.2 MP, f/1.7, 27mm (wide), 16 MP, f/2.4, 50mm (telephoto)",
+	  "battery": "2800",
+	  "ratings": "40",
+	  "nratings": "14",
+	  "youtube": "https://www.youtube.com/embed/mfbSqTB74xM",
+	  "review": "The Pixel 4 is Google’s latest attempt (alongside the Google Pixel 4 XL) at making a phone that shows off the very best of Android and offers up a cocktail of flagship photography features, including machine learning and other AI wizardry. It’s undeniably one of the very best camera phones you can buy right now, taking on that mantle from Google Pixel 3, but the upgrades are minimal elsewhere. Google hasn't tried to break the mold with the Pixel 4, instead playing things safe with an incremental update. But with the less powerful and more affordable Google Pixel 5 officially unveiled, the Pixel 4 stands as the tech giant's last stab at a pricey phone to compete spec-for-spec with top-tier flagships. That means you'll likely be able to pick up a Pixel 4 at a lower price, especially on Amazon Prime Day on October 13-14 and Black Friday later in November. These deals seasons typically see retailers and carriers offloading older phones, and we may see some great Pixel 4 discounts.",
+	  "experiences": [
+	    {
+	      "name": "Slavujko Djuric",
+	      "content": "Perfektan telefon, sve preporuke!",
+	      "likes": "5",
+	      "dislikes": "3"
+	    },
+	    {
+	      "name": "Slavujko Tmuric",
+	      "content": "Perfektan mobitel, sve preporuke!",
+	      "likes": "8",
+	      "dislikes": "1"
+	    },
+	    {
+	      "name": "Slavujko Curic",
+	      "content": "Perfektna sprava za pricanje, sve preporuke!",
+	      "likes": "1",
+	      "dislikes": "100"
+	    }
+	  ],
+	  "createdAt": "2021-04-17T08:54:53.501+00:00",
+	  "updatedAt": "2021-04-17T08:54:53.501+00:00"
+	},
+	{
+	  "model": "S20",
+	  "manufacturer": "Samsung",
+	  "price": "800",
+	  "image": "images/s20.jpg",
+	  "dimensions": {
+	    "length": "151.7",
+	    "width": "69.1",
+	    "height": "7.9"
+	  },
+	  "display": "6.2 inches, 1440 x 3200 pixels",
+	  "os": "Android 10, One UI 2.5",
+	  "memory": "128GB/8GB",
+	  "camera": "12 MP, f/1.8, 26mm (wide), 64 MP, f/2.0, 29mm (telephoto), 12 MP, f/2.2, 13mm (ultrawide)",
+	  "battery": "4000",
+	  "ratings": "30",
+	  "nratings": "30",
+	  "youtube": "https://www.youtube.com/embed/ZdC9soHxVC8",
+	  "review": "The Samsung Galaxy S20 has us asking 'what happened to the Galaxy S11?' Samsung skipped a few numbers for its latest Galaxy S20, which takes over the flagship mantle from 2019’s Galaxy S10. While it may be a confusing jump, there’s good reason for it, as Samsung has packed a lot in: it's a massive upgrade, especially if you’re keen to get your first 5G phone. The Galaxy S20 is cheaper, and easier to handle, than its siblings the Galaxy S20 Plus and gargantuan Galaxy S20 Ultra, but that doesn’t mean this is a cheap or low-spec device. Here's what you're getting: a 6.2-inch screen with a fast 120Hz refresh rate, 5G download speeds (where available), high-spec cameras on both sides of the phone, and a big battery to boot. This is the phone to get if you want to try out the new tech that Samsung has to offer, but you don’t want a large phone, or a large dent in your wallet. You could go for the Ultra if you want more storage or a 108MP camera, and can stretch to the price tag, but for day-to-day use the S20 is going to be the best choice for most people.",
+	  "experiences": [
+	    {
+	      "name": "Djuro Djuric",
+	      "content": "Superiska telefon, sve preporuke!",
+	      "likes": "5",
+	      "dislikes": "3"
+	    },
+	    {
+	      "name": "Djuro Tmuric",
+	      "content": "Superiska mobitel, sve preporuke!",
+	      "likes": "8",
+	      "dislikes": "1"
+	    },
+	    {
+	      "name": "Djuro Curic",
+	      "content": "Superiska sprava za pricanje, sve preporuke!",
+	      "likes": "1",
+	      "dislikes": "100"
+	    }
+	  ],
+	  "createdAt": "2021-04-17T08:54:53.501+00:00",
+	  "updatedAt": "2021-04-17T08:54:53.501+00:00"
+	}
+]

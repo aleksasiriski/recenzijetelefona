@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Phone reviews">
+		<meta name="keywords" content="Phone reviews">
+		<meta name="author" content="Aleksa Siriški">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Phone reviews</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/axios.min.js"></script>
+	</head>
+    <body>
+        <div class="page-header text-center">
+			<br/><br/>
+            <button class="btn btn-secondary" type="button"><a href="/">Home</a></button>
+			<br/><br/>
+		</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1>Create phone</h1>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="model">Model</label>
+                    <br/>
+                    <input type="text" id="model" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="manufacturer">Manufacturer</label>
+                    <br/>
+                    <input type="text" id="manufacturer" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="price">Price</label>
+                    <br/>
+                    <input type="text" id="price" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="length">Length</label>
+                    <br/>
+                    <input type="text" id="length" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="width">Width</label>
+                    <br/>
+                    <input type="text" id="width" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="height">Height</label>
+                    <br/>
+                    <input type="text" id="height" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="display">Display</label>
+                    <br/>
+                    <input type="text" id="display" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="os">OS</label>
+                    <br/>
+                    <input type="text" id="os" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="memory">Memory</label>
+                    <br/>
+                    <input type="text" id="memory" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="camera">Camera</label>
+                    <br/>
+                    <input type="text" id="camera" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="battery">Battery</label>
+                    <br/>
+                    <input type="text" id="battery" required>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <label for="youtube">Youtube</label>
+                    <br/>
+                    <input type="text" id="youtube" required>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <br/>
+                    <label for="review">Review</label>
+                    <br/>
+                    <textarea class="form-control" id="review" rows="5" placeholder="Write your review here..." required></textarea>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <br/>
+                    <button id="add-button" class="btn btn-primary" type="button">Create phone</button>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/createPhone.js"></script>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Phone reviews">
+		<meta name="keywords" content="Phone reviews">
+		<meta name="author" content="Aleksa Siriški">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Phone reviews</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/axios.min.js"></script>
+	</head>
+	<body>
+		<div class="page-header text-center">
+			<br/><br/>
+			<button class="btn btn-secondary" type="button"><a href="/">Home</a></button>
+			<div id="model">
+			</div>
+			<br/><br/>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center" id="image">
+				</div>
+				<div class="col-sm-12 text-left">
+					<h2>Review:</h2>
+					<div id="review"></div>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-sm-12 text-left">
+					<h2>Specs:</h2>
+					<br/>
+				</div>
+				<div class="col-sm-12 text-center">
+					<table class="table table-sm table-bordered table-hover table-dark">
+						<tbody>
+							<tr id="dimensions">
+							</tr>
+							<tr id="display">
+							</tr>
+							<tr id="os">
+							</tr>
+							<tr id="memory">
+							</tr>
+							<tr id="camera">
+							</tr>
+							<tr id="battery">
+							</tr>
+							<tr id="rating">
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h2>Video review:</h2>
+					<br/>
+					<div id="youtube"></div>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h2>Your experience:</h2>
+				</div>
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6 text-center">
+					<div class="form-group">
+						<label for="comment">Comment:</label>
+						<textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here..."></textarea>
+					</div>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="form-check col-sm-1 text-center">
+					<input class="form-check-input" type="radio" name="radios" id="radio1" value="1">
+					<label class="form-check-label" for="radio1">1</label>
+				</div>
+				<div class="form-check col-sm-1 text-center">
+					<input class="form-check-input" type="radio" name="radios" id="radio2" value="2">
+					<label class="form-check-label" for="radio2">2</label>
+				</div>
+				<div class="form-check col-sm-1 text-center">
+					<input class="form-check-input" type="radio" name="radios" id="radio3" value="3">
+					<label class="form-check-label" for="radio3">3</label>
+				</div>
+				<div class="form-check col-sm-1 text-center">
+					<input class="form-check-input" type="radio" name="radios" id="radio4" value="4">
+					<label class="form-check-label" for="radio4">4</label>
+				</div>
+				<div class="form-check col-sm-1 text-center">
+					<input class="form-check-input" type="radio" name="radios" id="radio5" value="5" checked>
+					<label class="form-check-label" for="radio5">5</label>
+				</div>
+				<br/>
+				<div class="col-sm-2 text-center">
+					<button id="submit" class="btn btn-primary" type="button">Submit</button>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h2>Experiences:</h2>
+					<br/>
+				</div>
+			</div>
+			<div class="row" id="experiences"></div>
+			<div id="experiences" class="row">
+			</div>
+		</div>
+		<script type="text/javascript" src="js/phone.js"></script>
+	</body>
+</html>
