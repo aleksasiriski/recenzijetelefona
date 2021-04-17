@@ -30,14 +30,14 @@ async function GetInput() {
         memory: memory,
         camera: camera,
         battery: battery,
+        ratings: "0",
+        nratings: "0",
         youtube: youtube,
         review: review
     };
 
-    let newPhone;
-
     try {
-        newPhone = await axios.post("api/phones", phone);
+        await axios.post("api/phones", phone);
     } catch (err) {
         console.log(err);
     }
