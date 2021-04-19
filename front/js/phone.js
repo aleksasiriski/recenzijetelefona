@@ -44,7 +44,7 @@ async function updatePhone(phone) {
         console.log(err);
     }
 
-    window.location.href = window.location.href;
+    location.reload();
 };
 
 async function GetInput(phone) {
