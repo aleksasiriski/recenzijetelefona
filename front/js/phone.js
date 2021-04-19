@@ -169,12 +169,12 @@ function RenderInfo(phone) {
     battery.innerHTML = `<th><h3>Battery:</h3></th><th><p>${phone.battery}</p></th>`;
 
     const rating = document.querySelector("#rating");
-    const ratingR = Number(phone.ratings) / Number(phone.nratings)
-    const ratingS = String(ratingR)
-    if( ratingS == "NaN" ) {
+    if( phone.nratings == "0" ) {
         rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>No ratings yet...</p></th>`;
     }
     else {
+        const ratingR = Number(phone.ratings) / Number(phone.nratings)
+        const ratingS = String(ratingR)
         rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>${ratingS}</p></th>`;
     }
 
