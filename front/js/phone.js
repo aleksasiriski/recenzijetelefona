@@ -54,15 +54,17 @@ async function GetInput(phone) {
     phone.ratings = String(Number(phone.ratings) + Number(ratingValue));
     phone.nratings = String(Number(phone.nratings) + 1);
 
-    const user = await axios.get('/api/getUsername');
-    const username = user.data.username;
-    const experience = {
-        name: username,
-        content: comment,
-        likes: "0",
-        dislikes: "0"
-    };
-    phone.experiences.push(experience);
+    if ( comment != "" ) {
+        const user = await axios.get('/api/getUsername');
+        const username = user.data.username;
+        const experience = {
+            name: username,
+            content: comment,
+            likes: "0",
+            dislikes: "0"
+        };
+        phone.experiences.push(experience);
+    }
 
     updatePhone(phone);
 }
