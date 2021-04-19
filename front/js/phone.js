@@ -171,7 +171,12 @@ function RenderInfo(phone) {
     const rating = document.querySelector("#rating");
     const ratingR = Number(phone.ratings) / Number(phone.nratings)
     const ratingS = String(ratingR)
-    rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>${ratingS}</p></th>`;
+    if( ratingS == NaN ) {
+        rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>No ratings yet...</p></th>`;
+    }
+    else {
+        rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>${ratingS}</p></th>`;
+    }
 
     const youtube = document.querySelector("#youtube");
     youtube.innerHTML = `<iframe src="${phone.youtube}"></iframe>`;
