@@ -6,7 +6,7 @@ async function GetData() {
 
     let phone;
     try {
-        phone = await axios.get(`/api/phone?id=${id}`);
+        phone = await axios.get(`/api/phones/${id}`);
         console.log(phone);
         RenderInfo(phone.data.phone);
         AddEventListeners(phone.data.phone);
@@ -39,7 +39,7 @@ function AddEventListeners(phone) {
 async function updatePhone(phone) {
     try {
         phone.updatedAt = new Date();
-        await axios.post("api/phonesUpdate", phone);
+        await axios.put("api/phones", phone);
     } catch (err) {
         console.log(err);
     }

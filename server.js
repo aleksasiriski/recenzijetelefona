@@ -57,9 +57,9 @@ app.get("/api/phones", async (req, res) => {
         })
     }
 })
-app.get("/api/phone", async (req, res) => {
+app.get("/api/phones/:id", async (req, res) => {
     try {
-        const id = req.query.id
+        const id = req.params.id
         const specificPhone = await phone.findById(id)
         res.status(200).json({
             success: true,
@@ -87,7 +87,7 @@ app.post("/api/phones", checkAuthenticated, async (req, res) => {
         })
     }
 })
-app.post("/api/phonesUpdate", checkAuthenticated, async (req, res) => {
+app.put("/api/phones", checkAuthenticated, async (req, res) => {
     try {
         phone.findByIdAndUpdate(req.body._id, req.body, (err, doc) => {
             if (err) {
@@ -106,8 +106,8 @@ app.post("/api/phonesUpdate", checkAuthenticated, async (req, res) => {
 })
 app.delete("/api/phones/:id", checkAuthenticated, async (req, res) => {
     try {
-        const phoneId = req.params.id
-        const specificPhone = await phone.findById(phoneId)
+        const id = req.params.id
+        const specificPhone = await phone.findById(id)
         const deletedPhone = await specificPhone.delete()
         res.status(200).json({
             success: true,
