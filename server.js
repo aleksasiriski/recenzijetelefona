@@ -157,7 +157,7 @@ app.delete('/api/logout', checkAuthenticated, (req, res) => {
     req.logOut()
     res.redirect('/login')
 })
-app.get('/api/getUsername', checkAuthenticated, (req, res) => {
+app.get('/api/user', checkAuthenticated, (req, res) => {
     res.status(200).json({
         success: true,
         username: req.session.passport.user

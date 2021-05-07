@@ -1,5 +1,5 @@
-var mongoose = require("mongoose");
-var passportLocalMongoose = require("passport-local-mongoose");
+var mongoose = require("mongoose")
+var passportLocalMongoose = require("passport-local-mongoose")
 
 var userSchema = new mongoose.Schema({
     username: {
@@ -14,15 +14,15 @@ var userSchema = new mongoose.Schema({
     },
     createdAt: Date,
     updatedAt: Date
-}, { collection: "users" });
+}, { collection: "users" })
 
 userSchema.pre("save", function (next) {
-    var currentDate = new Date();
-    this.updatedAt = currentDate;
+    var currentDate = new Date()
+    this.updatedAt = currentDate
     if (!this.createdAt)
-        this.createdAt = currentDate;
-    next();
-});
+        this.createdAt = currentDate
+    next()
+})
 
-userSchema.plugin(passportLocalMongoose);
-module.exports = mongoose.model("user", userSchema);
+userSchema.plugin(passportLocalMongoose)
+module.exports = mongoose.model("user", userSchema)

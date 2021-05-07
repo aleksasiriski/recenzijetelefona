@@ -1,4 +1,4 @@
-var mongoose = require("mongoose");
+var mongoose = require("mongoose")
 
 var phoneSchema = new mongoose.Schema({
     model: {
@@ -35,14 +35,14 @@ var phoneSchema = new mongoose.Schema({
     }],
     createdAt: Date,
     updatedAt: Date
-}, { collection: "phones" });
+}, { collection: "phones" })
 
 phoneSchema.pre("save", function (next) {
-    var currentDate = new Date();
-    this.updatedAt = currentDate;
+    var currentDate = new Date()
+    this.updatedAt = currentDate
     if (!this.createdAt)
-        this.createdAt = currentDate;
-    next();
-});
+        this.createdAt = currentDate
+    next()
+})
 
 module.exports = mongoose.model("phone", phoneSchema);

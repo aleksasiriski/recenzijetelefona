@@ -1,189 +1,190 @@
-GetData();
+loadPage()
 
-async function GetData() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
-
-    let phone;
+async function loadPage() {
     try {
-        phone = await axios.get(`/api/phones/${id}`);
-        console.log(phone);
-        RenderInfo(phone.data.phone);
-        AddEventListeners(phone.data.phone);
+        const urlParams = new URLSearchParams(window.location.search)
+        const id = urlParams.get("id")
+        const phone = await axios.get(`/api/phones/${id}`)
+        console.log(phone)
+        renderInfo(phone.data.phone)
+        addEventListeners(phone.data.phone)
     } catch (err) {
-        console.log(err);
-        window.location.href = "/";
+        console.log(err)
+        window.location.href = "/"
     }
 }
 
-function AddEventListeners(phone) {
-    const submitButton = document.querySelector("#submit");
-    submitButton.addEventListener("click", () => GetInput(phone))
+function addEventListeners(phone) {
+    const submitButton = document.querySelector("#submit")
+    submitButton.addEventListener("click", () => getInput(phone))
 
-    const likeBtns = [...document.querySelectorAll("#like-button")];
+    const likeBtns = [...document.querySelectorAll("#like-button")]
     likeBtns.forEach((btn) =>
         btn.addEventListener("click", () => likeComment(btn,phone))
-    );
+    )
 
-    const dislikeBtns = [...document.querySelectorAll("#dislike-button")];
+    const dislikeBtns = [...document.querySelectorAll("#dislike-button")]
     dislikeBtns.forEach((btn) =>
         btn.addEventListener("click", () => dislikeComment(btn,phone))
-    );
+    )
 
-    const commentBtns = [...document.querySelectorAll("#comment-button")];
+    const commentBtns = [...document.querySelectorAll("#comment-button")]
     commentBtns.forEach((btn) =>
         btn.addEventListener("click", () => addComment(btn,phone))
-    );
+    )
 }
 
 async function updatePhone(phone) {
     try {
-        phone.updatedAt = new Date();
-        await axios.put("api/phones", phone);
+        phone.updatedAt = new Date()
+        await axios.put("api/phones", phone)
+        location.reload()
     } catch (err) {
-        console.log(err);
+        console.log(err)
     }
+}
 
-    location.reload();
-};
+async function getInput(phone) {
+    try {
+        const ratingValue = $('input[name="radios"]:checked').val()
+        const comment = (document.querySelector("#comment")).value
 
-async function GetInput(phone) {
-    const ratingValue = $('input[name="radios"]:checked').val();
-    const comment = (document.querySelector("#comment")).value;
+        phone.ratings = String(Number(phone.ratings) + Number(ratingValue))
+        phone.nratings = String(Number(phone.nratings) + 1)
 
-    phone.ratings = String(Number(phone.ratings) + Number(ratingValue));
-    phone.nratings = String(Number(phone.nratings) + 1);
+        if ( comment != "" ) {
+            const user = await axios.get('/api/user')
+            const username = user.data.username
+            const experience = {
+                name: username,
+                content: comment,
+                likes: "0",
+                dislikes: "0"
+            }
+            phone.experiences.push(experience)
+        }
 
-    if ( comment != "" ) {
-        const user = await axios.get('/api/getUsername');
-        const username = user.data.username;
-        const experience = {
-            name: username,
-            content: comment,
-            likes: "0",
-            dislikes: "0"
-        };
-        phone.experiences.push(experience);
+        updatePhone(phone)
+    } catch (err) {
+        console.log(err)
+        window.location.href = "/"
     }
-
-    updatePhone(phone);
 }
 
 function getIndex(btn) {
-    const parent = btn.parentElement;
-    const index = parent.getAttribute("comment-id");
-    return index;
-};
+    const parent = btn.parentElement
+    const index = parent.getAttribute("comment-id")
+    return index
+}
 
 async function likeComment(btn,phone) {
-    const index = getIndex(btn);
     try {
-        let i = 0;
+        const index = getIndex(btn)
+        let i = 0
         phone.experiences.forEach((experience) => {
             if( i == index ) {
-                experience.likes = String(Number(experience.likes)+1);
-                updatePhone(phone);
-                return;
+                experience.likes = String(Number(experience.likes)+1)
+                updatePhone(phone)
+                return
             }
-            i++;
-        });
+            i++
+        })
     } catch (err) {
-        console.log(err);
-        window.location.href = "/";
+        console.log(err)
+        window.location.href = "/"
     }
-};
+}
 
 async function dislikeComment(btn,phone) {
-    const index = getIndex(btn);
     try {
-        let i = 0;
+        const index = getIndex(btn)
+        let i = 0
         phone.experiences.forEach((experience) => {
             if( i == index ) {
-                experience.dislikes = String(Number(experience.dislikes)+1);
-                updatePhone(phone);
+                experience.dislikes = String(Number(experience.dislikes)+1)
+                updatePhone(phone)
                 return;
             }
-            i++;
-        });
+            i++
+        })
     } catch (err) {
-        console.log(err);
-        window.location.href = "/";
+        console.log(err)
+        window.location.href = "/"
     }
-};
+}
 
 async function addComment(btn,phone) {
-    const index = getIndex(btn);
-    const user = await axios.get('/api/getUsername');
-    const username = user.data.username;
     try {
-        let i = 0;
+        const index = getIndex(btn)
+        const user = await axios.get('/api/user')
+        const username = user.data.username
+        let i = 0
         phone.experiences.forEach((experience) => {
             if( i == index ) {
-                const comment = (document.querySelector(`#comment${index}`)).value;
+                const comment = (document.querySelector(`#comment${index}`)).value
 
                 const newComment = {
                     name: username,
                     content: comment
                 }
-                experience.comments.push(newComment);
-                updatePhone(phone);
-                return;
+                experience.comments.push(newComment)
+                updatePhone(phone)
+                return
             }
-            i++;
-        });
+            i++
+        })
     } catch (err) {
-        console.log(err);
-        window.location.href = "/";
+        console.log(err)
+        window.location.href = "/"
     }
-};
+}
 
 function showCommentForm(id) {
-    var x = document.getElementById(id);
-    $(x).toggle();
-};
+    var x = document.getElementById(id)
+    $(x).toggle()
+}
 
 function RenderInfo(phone) {
-    const model = document.querySelector("#model");
-    model.innerHTML = `<h1>${phone.model}</h1>`;
+    const model = document.querySelector("#model")
+    model.innerHTML = `<h1>${phone.model}</h1>`
 
-    const image = document.querySelector("#image");
-    image.innerHTML = `<img src="${phone.image}" class="img-fluid">`;
+    const image = document.querySelector("#image")
+    image.innerHTML = `<img src="${phone.image}" class="img-fluid">`
 
-    const review = document.querySelector("#review");
-    review.innerHTML = `<p>${phone.review}</p>`;
+    const review = document.querySelector("#review")
+    review.innerHTML = `<p>${phone.review}</p>`
 
-    const dimensions = document.querySelector("#dimensions");
-    dimensions.innerHTML = `<th><h3>Dimensions:</h3></th><th><p>${phone.dimensions.length} x ${phone.dimensions.width} x ${phone.dimensions.height}</p></th>`;
+    const dimensions = document.querySelector("#dimensions")
+    dimensions.innerHTML = `<th><h3>Dimensions:</h3></th><th><p>${phone.dimensions.length} x ${phone.dimensions.width} x ${phone.dimensions.height}</p></th>`
 
-    const display = document.querySelector("#display");
-    display.innerHTML = `<th><h3>Display:</h3></th><th><p>${phone.display}</p></th>`;
+    const display = document.querySelector("#display")
+    display.innerHTML = `<th><h3>Display:</h3></th><th><p>${phone.display}</p></th>`
 
-    const os = document.querySelector("#os");
-    os.innerHTML = `<th><h3>OS:</h3></th><th><p>${phone.os}</p></th>`;
+    const os = document.querySelector("#os")
+    os.innerHTML = `<th><h3>OS:</h3></th><th><p>${phone.os}</p></th>`
 
-    const memory = document.querySelector("#memory");
-    memory.innerHTML = `<th><h3>Memory:</h3></th><th><p>${phone.memory}</p></th>`;
+    const memory = document.querySelector("#memory")
+    memory.innerHTML = `<th><h3>Memory:</h3></th><th><p>${phone.memory}</p></th>`
 
-    const camera = document.querySelector("#camera");
-    camera.innerHTML = `<th><h3>Camera:</h3></th><th><p>${phone.camera}</p></th>`;
+    const camera = document.querySelector("#camera")
+    camera.innerHTML = `<th><h3>Camera:</h3></th><th><p>${phone.camera}</p></th>`
 
-    const battery = document.querySelector("#battery");
-    battery.innerHTML = `<th><h3>Battery:</h3></th><th><p>${phone.battery}</p></th>`;
+    const battery = document.querySelector("#battery")
+    battery.innerHTML = `<th><h3>Battery:</h3></th><th><p>${phone.battery}</p></th>`
 
-    const rating = document.querySelector("#rating");
+    const rating = document.querySelector("#rating")
     if( phone.nratings == "0" ) {
-        rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>No ratings yet...</p></th>`;
+        rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>No ratings yet...</p></th>`
     }
     else {
-        const ratingR = Number(phone.ratings) / Number(phone.nratings)
-        const ratingS = String(ratingR)
-        rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>${ratingS}</p></th>`;
+        const ratingRatio = String(Number(phone.ratings) / Number(phone.nratings))
+        rating.innerHTML = `<th><h3>Rating:</h3></th><th><p>${ratingRatio}</p></th>`
     }
 
-    const youtube = document.querySelector("#youtube");
-    youtube.innerHTML = `<iframe src="${phone.youtube}"></iframe>`;
+    const youtube = document.querySelector("#youtube")
+    youtube.innerHTML = `<iframe src="${phone.youtube}"></iframe>`
 
-    const experiences = document.querySelector("#experiences");
+    const experiences = document.querySelector("#experiences")
     let experiencesHtml = ""
     let index = 0
     phone.experiences.forEach((experience) => {
@@ -204,8 +205,8 @@ function RenderInfo(phone) {
                 <button id="comment-button" class="btn btn-primary" type="button">Submit</button>
             </div>
             <br/>
-        </div>`;
-        index++;
-    });
-    experiences.innerHTML = experiencesHtml;
+        </div>`
+        index++
+    })
+    experiences.innerHTML = experiencesHtml
 }
