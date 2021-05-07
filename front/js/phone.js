@@ -144,7 +144,7 @@ function showCommentForm(id) {
     $(x).toggle()
 }
 
-function RenderInfo(phone) {
+function renderInfo(phone) {
     const model = document.querySelector("#model")
     model.innerHTML = `<h1>${phone.model}</h1>`
 
