@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 
 async function connectDB() {
     try {
-        const url = "mongodb://server.lavelektronik.com:27017/projekat"
+        const url = "mongodb://server.lavelektronik.com:27017/recenzijetelefona"
 
-        const connection = await mongoose.connect(url, {
+        await mongoose.connect(url, {
             useUnifiedTopology: true,
             useNewUrlParser: true,
             useCreateIndex: true,

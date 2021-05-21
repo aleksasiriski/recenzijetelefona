@@ -1,7 +1,7 @@
-var mongoose = require("mongoose")
-var passportLocalMongoose = require("passport-local-mongoose")
+const mongoose = require("mongoose")
+const passportLocalMongoose = require("passport-local-mongoose")
 
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -17,7 +17,7 @@ var userSchema = new mongoose.Schema({
 }, { collection: "users" })
 
 userSchema.pre("save", function (next) {
-    var currentDate = new Date()
+    const currentDate = new Date()
     this.updatedAt = currentDate
     if (!this.createdAt)
         this.createdAt = currentDate

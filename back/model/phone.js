@@ -1,6 +1,6 @@
-var mongoose = require("mongoose")
+const mongoose = require("mongoose")
 
-var phoneSchema = new mongoose.Schema({
+const phoneSchema = new mongoose.Schema({
     model: {
         type: String,
         required: true,
@@ -38,7 +38,7 @@ var phoneSchema = new mongoose.Schema({
 }, { collection: "phones" })
 
 phoneSchema.pre("save", function (next) {
-    var currentDate = new Date()
+    const currentDate = new Date()
     this.updatedAt = currentDate
     if (!this.createdAt)
         this.createdAt = currentDate
